@@ -8,3 +8,4 @@ Add, commit, push.. this is the process. :wq is how you resolve conflicts
 
 ## Collaborators
 - Emily
+- Troy
