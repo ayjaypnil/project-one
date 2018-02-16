@@ -10,3 +10,7 @@ Add, commit, push.. this is the process. :wq is how you resolve conflicts
 - Emily
 - Troy
 - AJ
+
+Here is Troy the sequel!!!!!
+
+aka the r and r
