@@ -14,3 +14,5 @@ Add, commit, push.. this is the process. :wq is how you resolve conflicts
 Here is Troy the sequel!!!!!
 
 aka the r and r
+
+added something
