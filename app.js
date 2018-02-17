@@ -8,7 +8,8 @@ var topVerge;
 
 
 $("#submitWIRED").on("click", function () {
-
+    $("#topNews").empty();
+    $("#newsTitle").empty();
     var WIREDqueryURL = "https://newsapi.org/v2/top-headlines?sources=wired&apiKey=95fc06a84c3242019177b79e752121ea";
     $.ajax({
         url: WIREDqueryURL,
@@ -16,16 +17,15 @@ $("#submitWIRED").on("click", function () {
     }).then(function (response) {
         for (i = 0; i < response.articles.length; i++) {
             topWIRED = response.articles[i].title;
-            $("#topWired").append("<li>" + topWIRED + "</li>");
+            $("#topNews").append("<li>" + topWIRED + "</li>");
         }
+        $("#newsTitle").append("Wired!");
     });
 });
 
-
-
-
 $("#submitVICE").on("click", function () {
-
+    $("#topNews").empty();
+    $("#newsTitle").empty();
     var VICEqueryURL = "https://newsapi.org/v2/top-headlines?sources=vice-news&apiKey=95fc06a84c3242019177b79e752121ea";
     $.ajax({
         url: VICEqueryURL,
@@ -33,14 +33,15 @@ $("#submitVICE").on("click", function () {
     }).then(function (response) {
         for (i = 0; i < response.articles.length; i++) {
             topVICE = response.articles[i].title;
-            $("#topVice").append("<li>" + topVICE + "</li>");
+            $("#topNews").append("<li>" + topVICE + "</li>");
         }
+        $("#newsTitle").append("Vice News!");
     });
 });
 
-
 $("#submitBR").on("click", function () {
-
+    $("#topNews").empty();
+    $("#newsTitle").empty();
     var BRqueryURL = "https://newsapi.org/v2/top-headlines?sources=bleacher-report&apiKey=95fc06a84c3242019177b79e752121ea";
     $.ajax({
         url: BRqueryURL,
@@ -48,13 +49,15 @@ $("#submitBR").on("click", function () {
     }).then(function (response) {
         for (i = 0; i < response.articles.length; i++) {
             topBR = response.articles[i].title;
-            $("#topBR").append("<li>" + topBR + "</li>");
+            $("#topNews").append("<li>" + topBR + "</li>");
         }
+        $("#newsTitle").append("Bleacher Report!");
     });
 });
 
 $("#submitBF").on("click", function () {
-
+    $("#topNews").empty();
+    $("#newsTitle").empty();
     var BFqueryURL = "https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=95fc06a84c3242019177b79e752121ea";
     $.ajax({
         url: BFqueryURL,
@@ -62,22 +65,25 @@ $("#submitBF").on("click", function () {
     }).then(function (response) {
         for (i = 0; i < response.articles.length; i++) {
             topBF = response.articles[i].title;
-            $("#topBUZZFEED").append("<li>" + topBF + "</li>");
+            $("#topNews").append("<li>" + topBF + "</li>");
         }
+        $("#newsTitle").append("Buzzfeed!");
     });
 });
 
 $("#submitVerge").on("click", function () {
+    $("#topNews").empty();
+    $("#newsTitle").empty();
     var VERGEqueryURL = "https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=95fc06a84c3242019177b79e752121ea";
-
     $.ajax({
         url: VERGEqueryURL,
         method: 'GET'
     }).then(function (response) {
         for (i = 0; i < response.articles.length; i++) {
             topVerge = response.articles[i].title;
-            $("#topVERGE").append("<li>" + topVerge + "</li>");
+            $("#topNews").append("<li>" + topVerge + "</li>");
         }
+        $("#newsTitle").append("The Verge!");
     });
 });
 
@@ -89,16 +95,4 @@ $("#submitVerge").on("click", function () {
 
 
 
-// $("#submitCNN").on("click", function () {
 
-//     var CNNqueryURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=95fc06a84c3242019177b79e752121ea";
-//     $.ajax({
-//         url: CNNqueryURL,
-//         method: 'GET'
-//     }).then(function (response) {
-//         for (i = 0; i < response.articles.length; i++) {
-//             topCNN = response.articles[i].title;
-//             $("#topCNN").append("<li>" + topCNN + "</li>");
-//         }
-//     });
-// });
