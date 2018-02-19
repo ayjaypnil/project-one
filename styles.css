@@ -1,7 +1,7 @@
 .container {
   align-items: center;
   position: relative;
-  padding-left: 300px;
+  padding-left: 150px;
 }
 
 h1 {
@@ -10,12 +10,12 @@ h1 {
 
 h2 {
   font-family: 'Pacifico', cursive;
-  font-size: 150px;
+  font-size: 75px;
 }
 
 h3 {
   font-family: 'Monoton', cursive;
-  font-size: 200px;
+  font-size: 100px;
   color: rgb(110, 18, 18)
 }
 

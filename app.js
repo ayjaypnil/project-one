@@ -5,7 +5,9 @@ var topBF;
 var topVerge;
 
 
-$("#topUSNEWS").on("click", function(){
+$("#topUSNEWS").on("click", function(event){
+    event.preventDefault();
+    
     $("#mediadiv").empty();
     $("#newsTitle").empty();
     var topUSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -26,7 +28,9 @@ $("#topUSNEWS").on("click", function(){
     });
 });
 
-$("#businessNEWS").on("click", function () {
+$("#businessNEWS").on("click", function (event) {
+    event.preventDefault();
+
     $("#mediadiv").empty();
     $("#newsTitle").empty();
     var topBUSINESSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -68,7 +72,9 @@ $("#sportsNEWS").on("click", function () {
     });
 });
 
-$("#technologyNEWS").on("click", function () {
+$("#technologyNEWS").on("click", function (event) {
+    event.preventDefault();
+
     $("#mediadiv").empty();
     $("#newsTitle").empty();
     var topTECHqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -90,7 +96,9 @@ $("#technologyNEWS").on("click", function () {
 });
 
 
-$("#entertainmentNEWS").on("click", function () {
+$("#entertainmentNEWS").on("click", function (event) {
+    event.preventDefault();
+
     $("#mediadiv").empty();
     $("#newsTitle").empty();
     var topENTqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -110,6 +118,38 @@ $("#entertainmentNEWS").on("click", function () {
         $("#newsTitle").append("Top Entertainment Headlines!");
     });
 });
+
+
+
+$("#searchSUBMIT").on("click", function(event){
+    event.preventDefault();
+
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
+
+    var newsSEARCH = $("#newsSEARCH").val();
+    var SEARCHqueryurl = "https://newsapi.org/v2/everything?q=" + newsSEARCH + "&sortBy=popularity&apiKey=95fc06a84c3242019177b79e752121ea"
+     
+    $.ajax({
+        url: SEARCHqueryurl,
+        method: 'GET'
+    }).then(function(response){
+        for (i = 0; i < response.articles.length; i++) {
+            topSEARCH = response.articles[i].title;
+            descriptionSEARCH = response.articles[i].description;
+            imageSEARCH = response.articles[i].urlToImage;
+            urlSEARCH = response.articles[i].url;
+
+            console.log(topSEARCH + descriptionSEARCH + imageSEARCH + urlSEARCH);
+
+            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlSEARCH + "' target='_blank'><img class='media-object img-rounded' src='" + imageSEARCH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSEARCH + "</h4><p id='newsDescription'>" + descriptionSEARCH + "</p></div></div>");
+        }
+        $("#newsTitle").append("Top Headlines From Google News Regarding: " + newsSEARCH +"!");
+    });
+});
+
+
+
 
 $("#submitWIRED").on("click", function () {
     $("#topNews").empty();
