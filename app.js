@@ -43,7 +43,7 @@ $("#submitWIRED").on("click", function () {
             imageWIRED = response.articles[i].urlToImage;
             urlWIRED = response.articles[i].url;
 
-            // dynamically create the whole damn media thing
+            // dynamically create the whole media thing
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlWIRED + "' target='_blank'><img class='media-object img-rounded' src='" + imageWIRED + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topWIRED + "</h4><p id='newsDescription'>" + descriptionWIRED + "</p></div></div>");
         }
     });
