@@ -46,10 +46,11 @@ $("#submitWIRED").on("click", function () {
             // dynamically create the whole damn media thing
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlWIRED + "' target='_blank'><img class='media-object img-rounded' src='" + imageWIRED + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topWIRED + "</h4><p id='newsDescription'>" + descriptionWIRED + "</p></div></div>");
         }
-        $("#newsTitle").append("Wired!");
     });
 });
 
+//button click command
+//api key and AJAX request
 $("#submitVICE").on("click", function () {
     $("#topNews").empty();
     $("#newsTitle").empty();
@@ -67,10 +68,11 @@ $("#submitVICE").on("click", function () {
 
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlVICE + "' target='_blank'><img class='media-object img-rounded' src='" + imageVICE + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topVICE + "</h4><p id='newsDescription'>" + descriptionVICE + "</p></div></div>");
         }
-        $("#newsTitle").append("Vice News!");
     });
 });
 
+//button click command
+//api key and AJAX request
 $("#submitBR").on("click", function () {
     $("#topNews").empty();
     $("#newsTitle").empty();
@@ -88,10 +90,11 @@ $("#submitBR").on("click", function () {
 
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlBR + "' target='_blank'><img class='media-object img-rounded' src='" + imageBR + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topBR + "</h4><p id='newsDescription'>" + descriptionBR + "</p></div></div>");
         }
-        $("#newsTitle").append("Bleacher Report!");
     });
 });
 
+//button click command
+//api key and AJAX request
 $("#submitBF").on("click", function () {
     $("#topNews").empty();
     $("#newsTitle").empty();
@@ -109,15 +112,17 @@ $("#submitBF").on("click", function () {
 
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlBF + "' target='_blank'><img class='media-object img-rounded' src='" + imageBF + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topBF + "</h4><p id='newsDescription'>" + descriptionBF + "</p></div></div>");
         }
-        $("#newsTitle").append("Buzzfeed!");
     });
 });
 
+//button click command
+//api key and AJAX request
 $("#submitVerge").on("click", function () {
     $("#topNews").empty();
     $("#newsTitle").empty();
     $("#mediadiv").empty();
     var VERGEqueryURL = "https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=95fc06a84c3242019177b79e752121ea";
+
     $.ajax({
         url: VERGEqueryURL,
         method: 'GET'
@@ -130,6 +135,5 @@ $("#submitVerge").on("click", function () {
 
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlVerge + "' target='_blank'><img class='media-object img-rounded' src='" + imageVerge + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topVerge + "</h4><p id='newsDescription'>" + descriptionVerge + "</p></div></div>");
         }
-        $("#newsTitle").append("The Verge!");
     });
 });
