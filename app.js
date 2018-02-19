@@ -3,14 +3,11 @@ var topWIRED;
 var topBR;
 var topBF;
 var topVerge;
-var topUS;
 
 
-starter();
-// there is an error here in this file on the load that needs to be fixed. 
-
-
-function starter() {
+$("#topUSNEWS").on("click", function(){
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
     var topUSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=95fc06a84c3242019177b79e752121ea";
     $.ajax({
         url: topUSqueryURL,
@@ -25,8 +22,94 @@ function starter() {
 
             $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div>");
         }
+        $("#newsTitle").append("Top US Headlines!");
     });
-};
+});
+
+$("#businessNEWS").on("click", function () {
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
+    var topBUSINESSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=95fc06a84c3242019177b79e752121ea";
+    $.ajax({
+        url: topBUSINESSqueryURL,
+        method: 'GET'
+    }).then(function (response) {
+        for (i = 0; i < response.articles.length; i++) {
+            topBIZ = response.articles[i].title;
+            descriptionBIZ = response.articles[i].description;
+            imageBIZ = response.articles[i].urlToImage;
+            urlBIZ = response.articles[i].url;
+            console.log(topBIZ + descriptionBIZ + imageBIZ + urlBIZ);
+
+            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlBIZ + "' target='_blank'><img class='media-object img-rounded' src='" + imageBIZ + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topBIZ + "</h4><p id='newsDescription'>" + descriptionBIZ + "</p></div></div>");
+        }
+        $("#newsTitle").append("Top Business Headlines!");
+    });
+});
+
+$("#sportsNEWS").on("click", function () {
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
+    var topSPORTSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=95fc06a84c3242019177b79e752121ea";
+    $.ajax({
+        url: topSPORTSqueryURL,
+        method: 'GET'
+    }).then(function (response) {
+        for (i = 0; i < response.articles.length; i++) {
+            topSPORTS = response.articles[i].title;
+            descriptionSPORTS = response.articles[i].description;
+            imageSPORTS = response.articles[i].urlToImage;
+            urlSPORTS = response.articles[i].url;
+            console.log(topSPORTS + descriptionSPORTS + imageSPORTS + urlSPORTS);
+
+            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlSPORTS + "' target='_blank'><img class='media-object img-rounded' src='" + imageSPORTS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSPORTS + "</h4><p id='newsDescription'>" + descriptionSPORTS + "</p></div></div>");
+        }
+        $("#newsTitle").append("Top Sports Headlines!");
+    });
+});
+
+$("#technologyNEWS").on("click", function () {
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
+    var topTECHqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=95fc06a84c3242019177b79e752121ea";
+    $.ajax({
+        url: topTECHqueryURL,
+        method: 'GET'
+    }).then(function (response) {
+        for (i = 0; i < response.articles.length; i++) {
+            topTECH = response.articles[i].title;
+            descriptionTECH = response.articles[i].description;
+            imageTECH = response.articles[i].urlToImage;
+            urlTECH = response.articles[i].url;
+            console.log(topTECH + descriptionTECH + imageTECH + urlTECH);
+
+            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlTECH + "' target='_blank'><img class='media-object img-rounded' src='" + imageTECH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topTECH + "</h4><p id='newsDescription'>" + descriptionTECH + "</p></div></div>");
+        }
+        $("#newsTitle").append("Top Technology Headlines!");
+    });
+});
+
+
+$("#entertainmentNEWS").on("click", function () {
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
+    var topENTqueryURL = "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=95fc06a84c3242019177b79e752121ea";
+    $.ajax({
+        url: topENTqueryURL,
+        method: 'GET'
+    }).then(function (response) {
+        for (i = 0; i < response.articles.length; i++) {
+            topENT = response.articles[i].title;
+            descriptionENT = response.articles[i].description;
+            imageENT = response.articles[i].urlToImage;
+            urlENT = response.articles[i].url;
+            console.log(topENT + descriptionENT + imageENT + urlENT);
+
+            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlENT + "' target='_blank'><img class='media-object img-rounded' src='" + imageENT + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topENT + "</h4><p id='newsDescription'>" + descriptionENT + "</p></div></div>");
+        }
+        $("#newsTitle").append("Top Entertainment Headlines!");
+    });
+});
 
 $("#submitWIRED").on("click", function () {
     $("#topNews").empty();
