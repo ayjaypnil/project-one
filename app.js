@@ -1,4 +1,5 @@
 
+//variables for trending buttons
 var topVICE;
 var topWIRED;
 var topBR;
@@ -6,7 +7,8 @@ var topBF;
 var topVerge;
 
 
-
+//button click command
+//api key and AJAX request
 $("#submitWIRED").on("click", function () {
 
     var WIREDqueryURL = "https://newsapi.org/v2/top-headlines?sources=wired&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -21,9 +23,8 @@ $("#submitWIRED").on("click", function () {
     });
 });
 
-
-
-
+//button click command
+//api key and AJAX request
 $("#submitVICE").on("click", function () {
 
     var VICEqueryURL = "https://newsapi.org/v2/top-headlines?sources=vice-news&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -38,7 +39,8 @@ $("#submitVICE").on("click", function () {
     });
 });
 
-
+//button click command
+//api key and AJAX request
 $("#submitBR").on("click", function () {
 
     var BRqueryURL = "https://newsapi.org/v2/top-headlines?sources=bleacher-report&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -53,6 +55,8 @@ $("#submitBR").on("click", function () {
     });
 });
 
+//button click command
+//api key and AJAX request
 $("#submitBF").on("click", function () {
 
     var BFqueryURL = "https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=95fc06a84c3242019177b79e752121ea";
@@ -67,6 +71,8 @@ $("#submitBF").on("click", function () {
     });
 });
 
+//button click command
+//api key and AJAX request
 $("#submitVerge").on("click", function () {
     var VERGEqueryURL = "https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=95fc06a84c3242019177b79e752121ea";
 

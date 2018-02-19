@@ -1,0 +1,33 @@
+.container {
+  align-items: center;
+  position: relative;
+  padding-left: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 150px;
+}
+
+h3 {
+  font-family: 'Monoton', cursive;
+  font-size: 200px;
+  color: rgb(110, 18, 18)
+}
+
+h4 {
+  font-family: 'Codystar', cursive;
+  font-size: 75px;
+}
+
+#topWired,
+#topVice,
+#topBR,
+#topVERGE,
+#topBUZZFEED {
+  text-align: center;
+}
