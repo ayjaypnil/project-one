@@ -4,10 +4,10 @@ body,
 .panel,
 .panel-heading {
   background: #e1eec3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: -webkit-linear-gradient(to top, #e1eec3, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #e1eec3, #f05053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 
 h1 {
   text-align: center;
@@ -21,7 +21,7 @@ h2 {
 h3 {
   font-family: 'Monoton', cursive;
   font-size: 175px;
-  color: rgb(105, 73, 3)
+  color: rgb(95, 7, 7)
 }
 
 h5 {
@@ -46,4 +46,10 @@ img {
 #topVERGE,
 #topBUZZFEED {
   text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .btn {
+    font-size: 11px;
+  }
 }

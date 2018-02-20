@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +31,9 @@
         <h5>
             <center>Your Day Starts Here</center>
         </h5>
+            <center><p><span id="totalCon"> </span> People Are Connected Right Now!</p></center>
     </div>
+
 
     <center>
         <div class="btn-group" role="group" aria-label="...">
@@ -47,7 +51,7 @@
         <form class="form-inline">
             <div class="form-group">
                 <label for="newsSEARCH">Find another topic: </label>
-                <input type="text" class="form-control" id="newsSEARCH" placeholder="">
+                <input type="text" class="form-control" id="newsSEARCH" placeholder="  ">
             </div>
             <button type="submit" class="btn btn-default" id="searchSUBMIT">Search</button>
         </form>
@@ -73,5 +77,3 @@
 </body>
 
 </html>
-
-
