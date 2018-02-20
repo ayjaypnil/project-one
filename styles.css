@@ -1,24 +1,12 @@
 
 body,
-.jumbotron {
+.jumbotron,
+.panel,
+.panel-heading {
   background: #e1eec3;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-}
 
-.panel,
-.panel-heading {
-  background: #ccdce9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #eef2f3, #c0d7eb);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #eef2f3, #cce0f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-}
-
-.container {
-  align-items: center;
-  position: relative;
-  padding-left: 150px;
 }
 
 h1 {
