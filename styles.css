@@ -1,11 +1,14 @@
 
+.jumbotron {
+  background: #f1e59e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #f1e59e, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #f1e59e, #f05053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 body,
-.jumbotron,
-.panel,
-.panel-heading {
-  background: #e1eec3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #e1eec3, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #e1eec3, #f05053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.panel-heading,
+.panel {
+  background-color: #f1e59e;
 }
 
 
@@ -16,18 +19,20 @@ h1 {
 h2 {
   font-family: 'Pacifico', cursive;
   font-size: 125px;
+  color: rgb(0, 0, 0)
 }
 
 h3 {
   font-family: 'Monoton', cursive;
   font-size: 175px;
-  color: rgb(95, 7, 7)
+  color: #f1e59e;
 }
 
 h5 {
   font-family: 'Codystar', cursive;
   font-weight: bold;
   font-size: 55px;
+  color: rgb(0, 0, 0)
 } 
 
 #newsTitle {
