@@ -1,26 +1,3 @@
-# project-one
-Project One News App
-Troy and Emily try this!
+Get all the news you need to start your day in five minutes with Trend 5. Simply click on a button--news, business, sports, tech or pop culture to see headlines and articles on the topic. Don't see what you're looking for? Put something into the custom search bar to get even more.
 
-
-I saw this. It looks GREAT!
-Add, commit, push.. this is the process. :wq is how you resolve conflicts
-
-## Collaborators
-- Emily
-- Troy
-- AJ
-
-Here is Troy the sequel!!!!!
-
-aka the r and r
-
-added something
-
-here we go again
-
-back again............
-
-anotha one.
-
-let this be the last one please
+Trend 5: your day starts here.
