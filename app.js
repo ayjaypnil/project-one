@@ -4,6 +4,34 @@ var topBR;
 var topBF;
 var topVerge;
 
+  var config = { 
+      apiKey: "AIzaSyC4-zoIQx2rzmXOUiC3bHAI4_ncTqfwAZ4", 
+      authDomain: "trend-project-ee37f.firebaseapp.com", 
+      databaseURL: "https://trend-project-ee37f.firebaseio.com", 
+      projectId: "trend-project-ee37f", 
+      storageBucket: "trend-project-ee37f.appspot.com", 
+      messagingSenderId: "519469367647" 
+    };
+
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  var connectionsRef = database.ref("/connections");
+
+  var connectedRef = database.ref(".info/connections");
+
+  connectedRef.on("value", function (snap){
+    if(snap.val()){
+        var totalCon = connectionsRef.push(true);
+        totalCon.onDisconnect().remove();
+    }
+  });
+
+  connectionsRef.on("value", function (snap){
+    $("#totalCon").text(snap.numChildren());
+  });
+
 
 $("#topUSNEWS").on("click", function(event){
     event.preventDefault();
