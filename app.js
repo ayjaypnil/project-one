@@ -1,8 +1,4 @@
-var topVICE;
-var topWIRED;
-var topBR;
-var topBF;
-var topVerge;
+
 
   var config = { 
       apiKey: "AIzaSyC4-zoIQx2rzmXOUiC3bHAI4_ncTqfwAZ4", 
@@ -17,14 +13,20 @@ var topVerge;
 
   var database = firebase.database();
 
+  var topVICE;
+  var topWIRED;
+  var topBR;
+  var topBF;
+  var topVerge;
+
   var connectionsRef = database.ref("/connections");
 
-  var connectedRef = database.ref(".info/connections");
+  var connectedRef = database.ref(".info/connected");
 
   connectedRef.on("value", function (snap){
     if(snap.val()){
-        var totalCon = connectionsRef.push(true);
-        totalCon.onDisconnect().remove();
+        var con = connectionsRef.push(true);
+        con.onDisconnect().remove();
     }
   });
 
