@@ -55,6 +55,6 @@ img {
 
 @media screen and (max-width: 640px) {
   .btn {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
