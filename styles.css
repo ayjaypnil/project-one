@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 
 .black {
   color: #f05053;
 }
 
-=======
->>>>>>> 086183e78ecdd64d8f5321aec9dfda8797347f66
 .jumbotron {
   background: #f1e59e;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #f1e59e, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
@@ -30,13 +27,8 @@ h1 {
 
 h2 {
   font-family: 'Pacifico', cursive;
-<<<<<<< HEAD
-  font-size: 125px;
-  color: rgb(0, 0, 0);
-=======
   font-size: 85px;
   color: rgb(0, 0, 0)
->>>>>>> 086183e78ecdd64d8f5321aec9dfda8797347f66
 }
 
 h3 {

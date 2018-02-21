@@ -22,24 +22,15 @@ var connectionsRef = database.ref("/connections");
 
 var connectedRef = database.ref(".info/connected");
 
-<<<<<<< HEAD
 $(".btn").on("click", function(animate){
     $("h3 center").addClass("black");
 });
 
-
-connectedRef.on("value", function (snap){
-  if(snap.val()){
-      var con = connectionsRef.push(true);
-      con.onDisconnect().remove();
-  }
-=======
 connectedRef.on("value", function (snap) {
     if (snap.val()) {
         var con = connectionsRef.push(true);
         con.onDisconnect().remove();
     }
->>>>>>> 086183e78ecdd64d8f5321aec9dfda8797347f66
 });
 
 connectionsRef.on("value", function (snap) {
