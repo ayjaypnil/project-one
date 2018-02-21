@@ -60,10 +60,18 @@ h5 {
 }
 
 #newsTitle {
-
   font-family: 'Fredoka One', cursive;
-  font-size: 27px;
+  font-size: 20px;
   color: black;
+
+}
+#newsHEADING{
+/* max-width: 75ch; */
+font-weight: 600;
+}
+
+#newsDescription{
+  max-width: 75ch;
 }
 
 img {
