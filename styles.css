@@ -5,11 +5,23 @@
   background: linear-gradient(to top, #f1e59e, #f05053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-body,
-.panel-heading,
+body, .panel-heading,
 .panel {
   background-color: #f1e59e;
 }
+
+.well{
+  background : rgba(242, 166, 126, 0.37);
+}
+.panel-title{
+  background: rgba(242, 166, 126, 0.37);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#totalCon{
+  font-weight: 700;
+}
+
 
 
 h1 {
@@ -18,26 +30,26 @@ h1 {
 
 h2 {
   font-family: 'Pacifico', cursive;
-  font-size: 125px;
+  font-size: 85px;
   color: rgb(0, 0, 0)
 }
 
 h3 {
   font-family: 'Monoton', cursive;
-  font-size: 175px;
+  font-size: 120px;
   color: #f1e59e;
 }
 
 h5 {
   font-family: 'Codystar', cursive;
   font-weight: bold;
-  font-size: 55px;
+  font-size: 35px;
   color: rgb(0, 0, 0)
 } 
 
 #newsTitle {
   font-family: 'NTR', cursive;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 img {

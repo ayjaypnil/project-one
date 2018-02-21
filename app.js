@@ -60,7 +60,8 @@ $("#topUSNEWS").on("click", function(event){
                   $(this).attr("src", "trendfivelogo.png");
               });
           });
-          $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div>");
+        //   $("#headingPanel").append("<div class='panel panel-default'><h3 class='panel-title'><center><span id='newsTitle'> </span></center></h3></div>")
+          $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div></div>");
       } 
       $("#newsTitle").append("Top US Headlines!");
   });
