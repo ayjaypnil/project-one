@@ -21,6 +21,11 @@ var connectionsRef = database.ref("/connections");
 
 var connectedRef = database.ref(".info/connected");
 
+$(".btn").on("click", function(animate){
+    $("h3 center").addClass("black");
+});
+
+
 connectedRef.on("value", function (snap){
   if(snap.val()){
       var con = connectionsRef.push(true);

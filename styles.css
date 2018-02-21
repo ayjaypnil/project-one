@@ -1,4 +1,8 @@
 
+.black {
+  color: #f05053;
+}
+
 .jumbotron {
   background: #f1e59e;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #f1e59e, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
@@ -19,7 +23,7 @@ h1 {
 h2 {
   font-family: 'Pacifico', cursive;
   font-size: 125px;
-  color: rgb(0, 0, 0)
+  color: rgb(0, 0, 0);
 }
 
 h3 {
@@ -34,6 +38,10 @@ h5 {
   font-size: 55px;
   color: rgb(0, 0, 0)
 } 
+
+.btn {
+  background-color: #f3a97fd6;
+}
 
 #newsTitle {
   font-family: 'NTR', cursive;
