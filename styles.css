@@ -1,8 +1,9 @@
-
 .jumbotron {
   background: #f1e59e;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #f1e59e, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #f1e59e, #f05053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0.5em 0.6em;
+ 
 }
 
 body,
@@ -11,6 +12,9 @@ body,
   background-color: #f1e59e;
 }
 
+.panel-heading {
+  width: 70%;
+}
 
 h1 {
   text-align: center;
@@ -18,26 +22,28 @@ h1 {
 
 h2 {
   font-family: 'Pacifico', cursive;
-  font-size: 125px;
+  font-size: 85px;
   color: rgb(0, 0, 0)
 }
 
 h3 {
   font-family: 'Monoton', cursive;
-  font-size: 175px;
+  font-size: 115px;
   color: #f1e59e;
 }
 
 h5 {
   font-family: 'Codystar', cursive;
   font-weight: bold;
-  font-size: 55px;
+  font-size: 38px;
   color: rgb(0, 0, 0)
 } 
 
 #newsTitle {
-  font-family: 'NTR', cursive;
-  font-size: 30px;
+  font-family: 'Montserrat', cursive;
+  font-size: 27px;
+  font-weight: bold;
+  margin-left: 30px;
 }
 
 img {
@@ -53,8 +59,39 @@ img {
   text-align: center;
 }
 
+/*
+#topUSNEWS,
+#businessNEWS,
+#sportsNEWS,
+#technologyNEWS,
+#entertainmentNEWS {
+  height: 75px;
+  width: 150px;
+  font-size: 20px;
+}
+
+
+.btn-default {
+  border: 50px;
+  border-color: #070707;
+  border-right-color: #070707;
+}
+*/
+
 @media screen and (max-width: 640px) {
   .btn {
-    font-size: 10px;
+    font-size: 10px; 
+  }
+  .form-inline {
+    inline-size: 50%;
+  }
+  #searchSUBMIT {
+    position: relative;
+  }
+  .panel-heading {
+    width: 100%;
+  }
+  #newsTitle {
+    margin-left: 0px;
   }
 }
