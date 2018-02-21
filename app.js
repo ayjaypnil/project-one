@@ -98,7 +98,7 @@ $("#businessNEWS").on("click", function (event) {
                 });
             });
 
-            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlBIZ + "' target='_blank'><img class='media-object img-rounded' src='" + imageBIZ + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topBIZ + "</h4><p id='newsDescription'>" + descriptionBIZ + "</p></div></div>");
+            $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlBIZ + "' target='_blank'><img class='media-object img-rounded' src='" + imageBIZ + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topBIZ + "</h4><p id='newsDescription'>" + descriptionBIZ + "</p></div></div></div>");
         }
 
         $("#newsTitle").append("Top Business Headlines");
@@ -130,7 +130,7 @@ $("#sportsNEWS").on("click", function () {
                 });
             });
 
-            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlSPORTS + "' target='_blank'><img class='media-object img-rounded' src='" + imageSPORTS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSPORTS + "</h4><p id='newsDescription'>" + descriptionSPORTS + "</p></div></div>");
+            $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlSPORTS + "' target='_blank'><img class='media-object img-rounded' src='" + imageSPORTS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSPORTS + "</h4><p id='newsDescription'>" + descriptionSPORTS + "</p></div></div></div>");
         }
         $("#newsTitle").append("Top Sports Headlines");
     });
@@ -163,7 +163,7 @@ $("#technologyNEWS").on("click", function (event) {
                 });
             });
 
-            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlTECH + "' target='_blank'><img class='media-object img-rounded' src='" + imageTECH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topTECH + "</h4><p id='newsDescription'>" + descriptionTECH + "</p></div></div>");
+            $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlTECH + "' target='_blank'><img class='media-object img-rounded' src='" + imageTECH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topTECH + "</h4><p id='newsDescription'>" + descriptionTECH + "</p></div></div></div>");
         }
         $("#newsTitle").append("Top Technology Headlines");
     });
@@ -196,7 +196,7 @@ $("#entertainmentNEWS").on("click", function (event) {
                 });
             });
 
-            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlENT + "' target='_blank'><img class='media-object img-rounded' src='" + imageENT + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topENT + "</h4><p id='newsDescription'>" + descriptionENT + "</p></div></div>");
+            $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlENT + "' target='_blank'><img class='media-object img-rounded' src='" + imageENT + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topENT + "</h4><p id='newsDescription'>" + descriptionENT + "</p></div></div></div>");
         }
         $("#newsTitle").append("Top Entertainment Headlines");
     });
@@ -235,7 +235,7 @@ $("#searchSUBMIT").on("click", function (event) {
 
                 });
             });
-            $("#mediadiv").append("<div class='media'><div class='media-left'><a href='" + urlSEARCH + "' target='_blank'><img class='media-object img-rounded' src='" + imageSEARCH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSEARCH + "</h4><p id='newsDescription'>" + descriptionSEARCH + "</p></div></div>");
+            $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlSEARCH + "' target='_blank'><img class='media-object img-rounded' src='" + imageSEARCH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSEARCH + "</h4><p id='newsDescription'>" + descriptionSEARCH + "</p></div></div></div>");
         }
         $("#newsTitle").append("Top Headlines From Google News Regarding: " + newsSEARCH);
     });
