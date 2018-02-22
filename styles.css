@@ -59,10 +59,11 @@ h5 {
   background-color: #f3a97fd6;
 }
 
-#newsTitle {
+#newsTitle, #authorQuote {
   font-family: 'Fredoka One', cursive;
-  font-size: 20px;
+  font-size: 13px;
   color: black;
+  font-weight: 200;
 
 }
 #newsHEADING{
