@@ -76,7 +76,7 @@ h5 {
 /*  */
 
 
-#newsTitle, #authorQuote {
+#newsTitle, #authorQuote, #noresultsText {
  /* headline and quote text */
   font-family: 'Fredoka One', cursive;
   font-size: 25px;
@@ -96,6 +96,10 @@ img {
    /* images for links */
     height: 75px;
     width: 75px;
+}
+#noresults {
+  height: 200px;
+  width: 200px;
 }
 
 
@@ -122,18 +126,4 @@ img {
   }
 }
 
- /* no longer in code 
-#topWired,
-#topVice,
-#topBR,
-#topVERGE,
-#topBUZZFEED {
-  text-align: center;
-}
-*/
 
-  /* no longer in code 
-  h1 {
-  text-align: center;
-}
-*/

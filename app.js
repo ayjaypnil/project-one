@@ -234,6 +234,10 @@ $("#searchSUBMIT").on("click", function (event) {
         url: SEARCHqueryurl,
         method: 'GET'
     }).then(function (response) {
+        if(response.articles.length == 0){
+            $("#mediadiv").append("<center><p id='noresultsText'>Sorry! Your search did not return any Google News results. Please try again!</p></center><br><center><img id='noresults' src='cattweaking.gif'></center>");
+        }
+
         for (i = 0; i < response.articles.length; i++) {
             topSEARCH = response.articles[i].title;
             descriptionSEARCH = response.articles[i].description;
@@ -253,6 +257,7 @@ $("#searchSUBMIT").on("click", function (event) {
                 });
             });
             $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlSEARCH + "' target='_blank'><img class='media-object img-rounded' src='" + imageSEARCH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSEARCH + "</h4><p id='newsDescription'>" + descriptionSEARCH + "</p></div></div></div>");
+            
         }
         $("#newsTitle").append("Top Headlines From Google News Regarding: " + newsSEARCH);
     });
