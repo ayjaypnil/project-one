@@ -1,4 +1,4 @@
-//firebase deployment
+//firebase deployment/establishing connection
 var config = {
     apiKey: "AIzaSyC4-zoIQx2rzmXOUiC3bHAI4_ncTqfwAZ4",
     authDomain: "trend-project-ee37f.firebaseapp.com",
@@ -9,23 +9,12 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
 var database = firebase.database();
 
-// var topVICE;
-// var topWIRED;
-// var topBR;
-// var topBF;
-// var topVerge;
-
-
+// For the user checks in firebase
 var connectionsRef = database.ref("/connections");
-
 var connectedRef = database.ref(".info/connected");
 
-// $(".btn").on("click", function(animate){
-//     $("h3 center").addClass("black");
-// });
 
 connectedRef.on("value", function (snap) {
     if (snap.val()) {
@@ -39,13 +28,7 @@ connectionsRef.on("value", function (snap) {
 });
 
 
-//API and AJAX request for quote generator
-//heroku link
-//query the URL, GET command
-//sending back the response
-//81 possible random quotes
-//appending the quote on top
-//appending the person quoted on the bottom
+// when the page loads..
 $(document).ready(function () {
     var QuotequeryURL = "https://random-quote-generator.herokuapp.com/api/quotes/";
 
@@ -72,23 +55,27 @@ $("#topUSNEWS").on("click", function (event) {
         url: topUSqueryURL,
         method: 'GET'
     }).then(function (response) {
+        // get response object and loop through it
         for (i = 0; i < response.articles.length; i++) {
+            // grab article title, description, url to the image, and the actual url to full story.
             topUS = response.articles[i].title;
             descriptionUS = response.articles[i].description;
             imageUS = response.articles[i].urlToImage;
             urlUS = response.articles[i].url;
             //   console.log(topUS + descriptionUS + imageUS + urlUS);
 
+            // if the description is null, we want the message to appear. 
             if (descriptionUS == null) {
                 descriptionUS = "Apologies, our sources are constantly updating in real-time, and this description has not refreshed. Please check back in a few, or feel free to click the image to the left to go directly to the full story!";
             }
+            // change the source to our logo if image can't load
             $(document).ready(function () {
                 $("img").bind("error", function () {
                     // Replacing image source
                     $(this).attr("src", "trendfivelogo.png");
                 });
             });
-            //   $("#headingPanel").append("<div class='panel panel-default'><h3 class='panel-title'><center><span id='newsTitle'> </span></center></h3></div>")
+            // the media div will be appended: [with the following.. the exact media html syntax from bootstrap attaching classes and id's where needed]
             $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div></div>");
         }
         $("#newsTitle").append("Top US Headlines");
@@ -231,7 +218,7 @@ $("#entertainmentNEWS").on("click", function (event) {
 });
 
 
-
+// slightly different for the search function
 $("#searchSUBMIT").on("click", function (event) {
     event.preventDefault();
 
@@ -239,6 +226,7 @@ $("#searchSUBMIT").on("click", function (event) {
     $("#newsTitle").empty();
     $("#authorQuote").empty();
 
+        // taking the value of the input box
     var newsSEARCH = $("#newsSEARCH").val();
     var SEARCHqueryurl = "https://newsapi.org/v2/top-headlines?q=" + newsSEARCH + "&sortBy=popularity&apiKey=95fc06a84c3242019177b79e752121ea"
 
