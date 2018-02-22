@@ -1,3 +1,4 @@
+//firebase deployment
 var config = {
     apiKey: "AIzaSyC4-zoIQx2rzmXOUiC3bHAI4_ncTqfwAZ4",
     authDomain: "trend-project-ee37f.firebaseapp.com",
@@ -11,11 +12,11 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-var topVICE;
-var topWIRED;
-var topBR;
-var topBF;
-var topVerge;
+// var topVICE;
+// var topWIRED;
+// var topBR;
+// var topBF;
+// var topVerge;
 
 
 var connectionsRef = database.ref("/connections");
@@ -38,55 +39,60 @@ connectionsRef.on("value", function (snap) {
 });
 
 
+//API and AJAX request for quote generator
+//heroku link
+//query the URL, GET command
+//sending back the response
+//81 possible random quotes
+//appending the quote on top
+//appending the person quoted on the bottom
+$(document).ready(function () {
+    var QuotequeryURL = "https://random-quote-generator.herokuapp.com/api/quotes/";
 
-    $(document).ready(function() {
-        var QuotequeryURL = "https://random-quote-generator.herokuapp.com/api/quotes/";
-
-        $.ajax({
-            url: QuotequeryURL,
-            method: 'GET'
-        }).then(function (response) {
-            var randomQuote = Math.floor(Math.random() * 81);
-            $("#newsTitle").append(response[randomQuote].quote);
-            $("#authorQuote").append("-" + response[randomQuote].author);
-             
-            
-        });
+    $.ajax({
+        url: QuotequeryURL,
+        method: 'GET'
+    }).then(function (response) {
+        var randomQuote = Math.floor(Math.random() * 81);
+        $("#newsTitle").append(response[randomQuote].quote);
+        $("#authorQuote").append("-" + response[randomQuote].author);
     });
+});
 
+//API and AJAX request for US News button
 
-$("#topUSNEWS").on("click", function(event){
-  event.preventDefault();
-  
-  $("#mediadiv").empty();
-  $("#newsTitle").empty();
-  $("#authorQuote").empty();
-  var topUSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=95fc06a84c3242019177b79e752121ea";
-  $.ajax({
-      url: topUSqueryURL,
-      method: 'GET'
-  }).then(function (response) {
-      for (i = 0; i < response.articles.length; i++) {
-          topUS = response.articles[i].title;
-          descriptionUS = response.articles[i].description;
-          imageUS = response.articles[i].urlToImage;
-          urlUS = response.articles[i].url;
-        //   console.log(topUS + descriptionUS + imageUS + urlUS);
+$("#topUSNEWS").on("click", function (event) {
+    event.preventDefault();
 
-          if (descriptionUS == null) {
-              descriptionUS = "Apologies, our sources are constantly updating in real-time, and this description has not refreshed. Please check back in a few, or feel free to click the image to the left to go directly to the full story!";
-          }
-          $(document).ready(function () {
-              $("img").bind("error", function () {
-                  // Replacing image source
-                  $(this).attr("src", "trendfivelogo.png");
-              });
-          });
-        //   $("#headingPanel").append("<div class='panel panel-default'><h3 class='panel-title'><center><span id='newsTitle'> </span></center></h3></div>")
-          $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div></div>");
-      } 
-      $("#newsTitle").append("Top US Headlines");
-  });
+    $("#mediadiv").empty();
+    $("#newsTitle").empty();
+    $("#authorQuote").empty();
+    var topUSqueryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=95fc06a84c3242019177b79e752121ea";
+    $.ajax({
+        url: topUSqueryURL,
+        method: 'GET'
+    }).then(function (response) {
+        for (i = 0; i < response.articles.length; i++) {
+            topUS = response.articles[i].title;
+            descriptionUS = response.articles[i].description;
+            imageUS = response.articles[i].urlToImage;
+            urlUS = response.articles[i].url;
+            //   console.log(topUS + descriptionUS + imageUS + urlUS);
+
+            if (descriptionUS == null) {
+                descriptionUS = "Apologies, our sources are constantly updating in real-time, and this description has not refreshed. Please check back in a few, or feel free to click the image to the left to go directly to the full story!";
+            }
+            $(document).ready(function () {
+                $("img").bind("error", function () {
+                    // Replacing image source
+                    $(this).attr("src", "trendfivelogo.png");
+                });
+            });
+            //   $("#headingPanel").append("<div class='panel panel-default'><h3 class='panel-title'><center><span id='newsTitle'> </span></center></h3></div>")
+            $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div></div>");
+        }
+        $("#newsTitle").append("Top US Headlines");
+    });
 });
 
 $("#businessNEWS").on("click", function (event) {

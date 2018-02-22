@@ -1,52 +1,46 @@
-
-/* .black {
-  color: #f05053;
-} */
-
 .jumbotron {
-  background: #f1e59e;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #f1e59e, #f05053);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #f1e59e, #f05053); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* color gradient info */
+  background: #f1e59e; 
+  background: -webkit-linear-gradient(to top, #f1e59e, #f05053);  
+  background: linear-gradient(to top, #f1e59e, #f05053); 
   padding: 0.5em 0.6em;
- 
 }
 
-body, .panel-heading,
+body, 
+.panel-heading,
 .panel {
   background-color: #f1e59e;
 }
 
-.well{
+.well {
+  /* color for behind links after button click */
   background : rgba(242, 166, 126, 0.37);
 }
-.panel-title{
+
+.panel-title {
   background: rgba(242, 166, 126, 0.37);
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-
 #totalCon{
+  /* others are seeing what's trending too */
   font-weight: 700;
 }
 
-
-
-h1 {
-  text-align: center;
-}
-
 h2 {
+  /* TREND text */
   font-family: 'Pacifico', cursive;
   font-size: 85px;
   color: rgb(0, 0, 0)
 }
 
 h3 {
+  /* 5 text */
   font-family: 'Monoton', cursive;
   font-size: 120px;
   color: #f1e59e;
-  /* transition: all 2s; */
+  /* css for animating the 5 */
   animation-name: logo;
   animation-duration: 8s;
   animation-direction: alternate;
@@ -54,36 +48,43 @@ h3 {
 }
 
 @keyframes logo {
+   /* css for animating the 5 */
   from {color:#f1e59e;}
   to {color:#f05053;}
 }
 
 h5 {
+   /* your day starts here text */
   font-family: 'Codystar', cursive;
   font-weight: bold;
   font-size: 35px;
   color: rgb(0, 0, 0)
 } 
 
+ /* css for buttons */
 .btn {
   background-color: #f3a97fd6;
 }
+
 .btn:hover{
   background:#f05053;
 }
+
 .btn:focus{
   background:#f3a97fd6;
 }
+/*  */
+
 
 #newsTitle, #authorQuote {
+ /* headline and quote text */
   font-family: 'Fredoka One', cursive;
-  font-size: 13px;
+  font-size: 25px;
   color: black;
   font-weight: 200;
-
 }
-#newsHEADING{
-/* max-width: 75ch; */
+
+#newsHEADING {
 font-weight: 600;
 }
 
@@ -92,37 +93,13 @@ font-weight: 600;
 }
 
 img {
+   /* images for links */
     height: 75px;
     width: 75px;
 }
 
-#topWired,
-#topVice,
-#topBR,
-#topVERGE,
-#topBUZZFEED {
-  text-align: center;
-}
 
-/*
-#topUSNEWS,
-#businessNEWS,
-#sportsNEWS,
-#technologyNEWS,
-#entertainmentNEWS {
-  height: 75px;
-  width: 150px;
-  font-size: 20px;
-}
-
-
-.btn-default {
-  border: 50px;
-  border-color: #070707;
-  border-right-color: #070707;
-}
-*/
-
+/* media queries */
 @media screen and (max-width: 640px) {
   .btn {
     font-size: 10px; 
@@ -138,5 +115,25 @@ img {
   }
   #newsTitle {
     margin-left: 0px;
+    font-size: 13px;
+  }
+  #authorQuote {
+    font-size: 13px;
   }
 }
+
+ /* no longer in code 
+#topWired,
+#topVice,
+#topBR,
+#topVERGE,
+#topBUZZFEED {
+  text-align: center;
+}
+*/
+
+  /* no longer in code 
+  h1 {
+  text-align: center;
+}
+*/
