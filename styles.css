@@ -1,7 +1,7 @@
 
-.black {
+/* .black {
   color: #f05053;
-}
+} */
 
 .jumbotron {
   background: #f1e59e;  /* fallback for old browsers */
@@ -46,6 +46,16 @@ h3 {
   font-family: 'Monoton', cursive;
   font-size: 120px;
   color: #f1e59e;
+  /* transition: all 2s; */
+  animation-name: logo;
+  animation-duration: 8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes logo {
+  from {color:#f1e59e;}
+  to {color:#f05053;}
 }
 
 h5 {
@@ -57,6 +67,12 @@ h5 {
 
 .btn {
   background-color: #f3a97fd6;
+}
+.btn:hover{
+  background:#f05053;
+}
+.btn:focus{
+  background:#f3a97fd6;
 }
 
 #newsTitle {
