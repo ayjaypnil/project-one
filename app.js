@@ -15,7 +15,7 @@ var database = firebase.database();
 var connectionsRef = database.ref("/connections");
 var connectedRef = database.ref(".info/connected");
 
-
+//when user connects to database
 connectedRef.on("value", function (snap) {
     if (snap.val()) {
         var con = connectionsRef.push(true);
@@ -23,12 +23,17 @@ connectedRef.on("value", function (snap) {
     }
 });
 
+//live updating value to show how many people are viewing page (totalCon ID)
 connectionsRef.on("value", function (snap) {
     $("#totalCon").text(snap.numChildren());
 });
 
 
-// when the page loads..
+// random quote API for when the page loads..
+//request for query url and GET method
+//getting response back--81 possible quotes
+//quote on the top line
+//person quoted follows underneath
 $(document).ready(function () {
     var QuotequeryURL = "https://random-quote-generator.herokuapp.com/api/quotes/";
 
@@ -42,7 +47,9 @@ $(document).ready(function () {
     });
 });
 
-//API and AJAX request for US News button
+//API, AJAX request and dynamic links for US News button
+//three ids are "empty" and then filled with API info
+//url and GET method for AJAX request
 
 $("#topUSNEWS").on("click", function (event) {
     event.preventDefault();
@@ -76,12 +83,15 @@ $("#topUSNEWS").on("click", function (event) {
                 });
             });
             // the media div will be appended: [with the following.. the exact media html syntax from bootstrap attaching classes and id's where needed]
+            //this is for the links that will appear underneath selected API button
             $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlUS + "' target='_blank'><img class='media-object img-rounded' src='" + imageUS + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topUS + "</h4><p id='newsDescription'>" + descriptionUS + "</p></div></div></div>");
         }
+        //new headline appears above stories
         $("#newsTitle").append("Top US Headlines");
     });
 });
 
+//API, AJAX request and dynamic links for Business button
 $("#businessNEWS").on("click", function (event) {
     event.preventDefault();
 
@@ -117,6 +127,8 @@ $("#businessNEWS").on("click", function (event) {
     });
 });
 
+
+//API, AJAX request and dynamic links for Sports button
 $("#sportsNEWS").on("click", function () {
     $("#mediadiv").empty();
     $("#newsTitle").empty();
@@ -149,6 +161,7 @@ $("#sportsNEWS").on("click", function () {
     });
 });
 
+//API, AJAX request and dynamic links for Technology button
 $("#technologyNEWS").on("click", function (event) {
     event.preventDefault();
 
@@ -183,7 +196,7 @@ $("#technologyNEWS").on("click", function (event) {
     });
 });
 
-
+//API, AJAX request and dynamic links for Entertainment button
 $("#entertainmentNEWS").on("click", function (event) {
     event.preventDefault();
 
@@ -217,7 +230,7 @@ $("#entertainmentNEWS").on("click", function (event) {
     });
 });
 
-
+//API, AJAX request and dynamic links for custon search button
 // slightly different for the search function
 $("#searchSUBMIT").on("click", function (event) {
     event.preventDefault();
@@ -226,7 +239,7 @@ $("#searchSUBMIT").on("click", function (event) {
     $("#newsTitle").empty();
     $("#authorQuote").empty();
 
-        // taking the value of the input box
+    // taking the value of the input box
     var newsSEARCH = $("#newsSEARCH").val();
     var SEARCHqueryurl = "https://newsapi.org/v2/top-headlines?q=" + newsSEARCH + "&sortBy=popularity&apiKey=95fc06a84c3242019177b79e752121ea"
 
@@ -234,7 +247,7 @@ $("#searchSUBMIT").on("click", function (event) {
         url: SEARCHqueryurl,
         method: 'GET'
     }).then(function (response) {
-        if(response.articles.length == 0){
+        if (response.articles.length == 0) {
             $("#mediadiv").append("<center><p id='noresultsText'>Sorry! Your search did not return any Google News results. Please try again!</p></center><br><center><img id='noresults' src='cattweaking.gif'></center>");
         }
 
@@ -257,7 +270,7 @@ $("#searchSUBMIT").on("click", function (event) {
                 });
             });
             $("#mediadiv").append("<div class='well'><div class='media'><div class='media-left'><a href='" + urlSEARCH + "' target='_blank'><img class='media-object img-rounded' src='" + imageSEARCH + "'></a></div><div class='media-body'><h4 class='media-heading' id='newsHEADING'>" + topSEARCH + "</h4><p id='newsDescription'>" + descriptionSEARCH + "</p></div></div></div>");
-            
+
         }
         $("#newsTitle").append("Top Headlines From Google News Regarding: " + newsSEARCH);
     });
